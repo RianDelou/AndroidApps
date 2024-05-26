@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Portfolio</string>
+    <string name="home">Home</string>
+    <string name="home__title">Olá! meu nome é Rian e bem vindo(a) ao meu portfólio</string>
+    <string name="home__description">Sou um desenvolvedor full stack aprendiz, masterizando meus conhecimentos em: react.js, node.js e java!</string>
+    <string name="about_me">Um Pouco Sobre Mim</string>
+    <string name="about_me__description_introduction">Me chamo Rian Delou e sou do Brasil, me interessei em programação no inicio de 2022, desde então tenho praticado bastante a lidar com bugs, trabalho em equipe e lógica de programação (masterizei isso com java, utilizando programação orientada a objetos).</string>
+    <string name="about_me__description_development">Em 2023 me interessei bastante no desenvolvimento front-end e estou masterizando meus conhecimentos desde lá, por isso utilizo o react.js.  Outrossim, me identifico bastante com o back-end também, em 2024 aprendi a manipular API utilizando o node.js.</string>
+    <string name="about_me__description_conclusion"> Para finalizar, considero que sou novo nesse mundo imenso da programação, amo aprender novas linguagens por pura diversão! por esse motivo estou sempre mergulhando em novas techs, mas é claro, tenho as minhas preferidas.</string>
+    <string name="projects">Meus Projetos</string>
+    <string name="projects__first">Front-end</string>
+    <string name="projects__title">Queue System</string>
+    <string name="projects__description">Um sistema de fila implementado em: html, css e javascript. O objetivo desse projeto era fazer algo simples e agradável, além de colocar em prática o js.</string>
+    <string name="projects__title_two">GitPlus Streaming</string>
+    <string name="projects__description_two">Um sistema que simula uma plataforma de streaming. Esse projeto foi realizado em equipe e fiquei responsavel por desenvolver todo o contato do front-end com o back-end, fazendo diversas manipulações com a API. Além disso, ajudei fortemente no design do website. (repositorio privado)</string>
+    <string name="projects__title_three">Fokus</string>
+    <string name="projects__description_three">Um projeto que desenvolvi o código JavaScript, no qual seu sistema seria basicamente um método para concentração nos estudos e ter o controle do seu tempo nisso.</string>
+    <string name="projects__second">Back-end</string>
+    <string name="projects__title_four">Lexical Analysis</string>
+    <string name="projects__description_four">Uma das partes de um compilador implementado em java, o objetivo desse projeto foi compreender o funcionamento do algoritmo de um analisador léxico</string>
+    <string name="projects__title_five">Gerenciamento de Banco de Dados</string>
+    <string name="projects__description_five">Desenvolvimento de um modelo conceitual, lógico e físco. Baseado em uma livraria-escola-online. Além disso, foi desenvolvido 6 perguntas para agregar valor ao negócio. Todas elas automatizadas com o DQL.</string>
+    <string name="stack">Stacks</string>
+    <string name="stack__description">A linguagem que comecei a programar. Tenho um conhecimento profundo em sua sintaxe e estou sempre buscando aprimorar / manter a consistência.</string>
+    <string name="stack__description_two">Tenho um conhecimento abrangente do node, como por exemplo: utilizar, manipular e executar inúmeros pacotes/dependências (NPM | NPX), para facilitar no desenvolvimento do software.</string>
+    <string name="stack__description_three">Estou sempre aprimorando meus conhecimentos com JS constantemente em busca do typescript.</string>
+    <string name="stack__description_four">Estou bastante familiarizado com diversas tags html, incluindo todas as tags semânticas.</string>
+    <string name="stack__description_five">Tenho um conhecimento extremamente sólido com css, principalmente com os displays: flex / grid.</string>
+    <string name="stack__description_six">React é uma library que estou aprendendo no momento. Porém, estou atualmente aprofundando meus conhecimentos nela para começar a desenvolver softwares com react.js.</string>
+    <string name="contact">Entre em contato</string>
+    <string name="contact__email">RianDelou63@hotmail.com</string>
+    <string name="contact__github">riandelou</string>
+</resources>
