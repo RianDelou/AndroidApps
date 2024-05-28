@@ -1,5 +1,7 @@
 package com.example.portfolio
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,6 +46,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -60,7 +64,8 @@ data class BottomNavigationItem(
 data class Project(
     val imageRes: Int,
     val description: String,
-    val title: String
+    val title: String,
+    val url: String
 )
 
 data class Skill(
@@ -79,22 +84,22 @@ class MainActivity : ComponentActivity() {
 
                 val items = listOf(
                     BottomNavigationItem(
-                        title = "Home",
+                        title = stringResource(id = R.string.home),
                         selectedIcon = Icons.Filled.Home,
                         unselectedIcon = Icons.Outlined.Home
                     ),
                     BottomNavigationItem(
-                        title = "About Me",
+                        title = stringResource(id = R.string.about_me_navbar),
                         selectedIcon = Icons.Filled.Person,
                         unselectedIcon = Icons.Outlined.Person
                     ),
                     BottomNavigationItem(
-                        title = "Projects",
+                        title = stringResource(id = R.string.projects_navbar),
                         selectedIcon = Icons.Filled.Edit,
                         unselectedIcon = Icons.Outlined.Edit
                     ),
                     BottomNavigationItem(
-                        title = "Stacks",
+                        title = stringResource(id = R.string.stacks_navbar),
                         selectedIcon = Icons.Filled.Star,
                         unselectedIcon = Icons.Outlined.Star
                     )
@@ -260,14 +265,14 @@ fun AboutMeScreen(modifier: Modifier = Modifier) {
 @Composable
 fun ProjectsScreen(modifier: Modifier = Modifier) {
     val frontEndProjects = listOf(
-        Project(R.drawable.gitplus, stringResource(id = R.string.projects__description_two),  stringResource(id = R.string.projects__title_two)),
-        Project(R.drawable.queuesystem, stringResource(id = R.string.projects__description), stringResource(id = R.string.projects__title)),
-        Project(R.drawable.fokus, stringResource(id = R.string.projects__description_three),  stringResource(id = R.string.projects__title_three))
+        Project(R.drawable.gitplus, stringResource(id = R.string.projects__description_two),  stringResource(id = R.string.projects__title_two), "https://github.com/RianDelou/projetoWebStreaming"),
+        Project(R.drawable.queuesystem, stringResource(id = R.string.projects__description), stringResource(id = R.string.projects__title), "https://github.com/RianDelou/QueueSystem"),
+        Project(R.drawable.fokus, stringResource(id = R.string.projects__description_three),  stringResource(id = R.string.projects__title_three), "https://github.com/RianDelou/Fokus")
     )
 
     val backEndProjects = listOf(
-        Project(R.drawable.lexical, stringResource(id = R.string.projects__description_four), stringResource(id = R.string.projects__title_four)),
-        Project(R.drawable.database, stringResource(id = R.string.projects__description_five), stringResource(id = R.string.projects__title_five))
+        Project(R.drawable.lexical, stringResource(id = R.string.projects__description_four), stringResource(id = R.string.projects__title_four), "https://github.com/RianDelou/analisador-lexico"),
+        Project(R.drawable.database, stringResource(id = R.string.projects__description_five), stringResource(id = R.string.projects__title_five), "https://github.com/RianDelou/bd-logical-physical")
 
         // ADD MORE BACK-END PROJECTS AND DO THE LINK WITH GITHUB THE A TAG
     )
@@ -349,14 +354,15 @@ fun ProjectsScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun ProjectItem(project: Project) {
+    val context = LocalContext.current
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 30.dp), // Increase vertical padding
+            .padding(bottom = 30.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         Text(
             text = project.title,
             color = Color.White,
@@ -373,7 +379,12 @@ fun ProjectItem(project: Project) {
             painter = image,
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.size(400.dp)
+            modifier = Modifier
+                .size(400.dp)
+                .clickable {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(project.url))
+                    context.startActivity(intent)
+                }
         )
         Spacer(modifier = Modifier.height(24.dp))
         Text(
@@ -384,6 +395,7 @@ fun ProjectItem(project: Project) {
         )
     }
 }
+
 
 @Composable
 fun SkillsScreen(modifier: Modifier = Modifier) {
@@ -527,7 +539,7 @@ fun Contact(modifier: Modifier = Modifier) {
             Icon(
                 imageVector = Icons.Default.Email,
                 contentDescription = null,
-                modifier = Modifier.padding(end = 8.dp)
+                modifier = Modifier.padding(end = 1.dp)
             )
         }
         Row(

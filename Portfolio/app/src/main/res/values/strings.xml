@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Portfolio</string>
     <string name="home">Home</string>
+    <string name="about_me_navbar">About Me</string>
+    <string name="projects_navbar">Projects</string>
+    <string name="stacks_navbar">Stacks</string>
     <string name="home__title">Olá! meu nome é Rian e bem vindo(a) ao meu portfólio</string>
     <string name="home__description">Sou um desenvolvedor full stack aprendiz, masterizando meus conhecimentos em: react.js, node.js e java!</string>
     <string name="about_me">Um Pouco Sobre Mim</string>
